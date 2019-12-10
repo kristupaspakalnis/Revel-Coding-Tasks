@@ -46,7 +46,6 @@ nodes = [
   }
 ];
 
-var t0 = performance.now();
 function lca(node, node_2){
   var mp = nodes.find(obj => obj.value == obj.parent);
   var node1 = nodes.find(obj =>obj.name == node);
