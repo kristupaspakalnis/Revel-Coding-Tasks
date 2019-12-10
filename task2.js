@@ -46,7 +46,9 @@ nodes = [
   }
 ];
 
+var t0 = performance.now();
 function lca(node, node_2){
+  var mp = nodes.find(obj => obj.value == obj.parent);
   var node1 = nodes.find(obj =>obj.name == node);
   var node2 = nodes.find(obj => obj.name == node_2);
     tmp = node1.value;
@@ -55,12 +57,12 @@ function lca(node, node_2){
       ar.push(tmp);
       ar2 = new Array();
       ar2.push(tmp2);
-        while(tmp != 1){
+        while(tmp != mp.value){
           tmp_node = nodes.find(obj => obj.value == tmp);
           ar.push(tmp_node.parent);
           tmp = tmp_node.parent;
         }
-        while(tmp2 != 1){
+        while(tmp2 != mp.value){
           tmp2_node = nodes.find(obj => obj.value == tmp2);
           ar2.push(tmp2_node.parent);
           tmp2 = tmp2_node.parent;
@@ -78,4 +80,4 @@ function lca(node, node_2){
     console.log(com());
 }
 
-lca('node9', 'node5');
+lca('node5', 'node6');
